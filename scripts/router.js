@@ -7,7 +7,6 @@ const routes = [
 
 const locationHandler = async () => {
 	const path = window.location.hash || '/'
-	console.log(path)
 	const route = routes.find((item) => item.path === path) || routes[0]
 	const html = await fetch(route.template).then((data) => data.text())
 	document.getElementById('app-root').innerHTML = html
